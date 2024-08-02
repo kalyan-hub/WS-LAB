@@ -29,31 +29,8 @@ Here’s a step-by-step guide to create a basic environment to test and understa
 
    Create an index.html file:
 
-   html
-   <!DOCTYPE html>
-   <html lang="en">
-   <head>
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title>Server 1</title>
-   </head>
-   <body>
-       <h1>Server 1</h1>
-       <button id="fetchData">Fetch Data from Server 2</button>
-       <div id="result"></div>
-       <script>
-           document.getElementById('fetchData').addEventListener('click', () => {
-               fetch('http://localhost:8001/data')
-                   .then(response => response.text())
-                   .then(data => {
-                       document.getElementById('result').innerText = data;
-                   })
-                   .catch(err => console.error('Error:', err));
-           });
-       </script>
-   </body>
-   </html>
-   
+
+                   
 
    Start the HTTP server:
 
@@ -72,19 +49,7 @@ Here’s a step-by-step guide to create a basic environment to test and understa
 
    Create a data.html file:
 
-   html
-   <!DOCTYPE html>
-   <html lang="en">
-   <head>
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title>Server 2</title>
-   </head>
-   <body>
-       <h1>Server 2</h1>
-       <p>Data from Server 2</p>
-   </body>
-   </html>
+   
    
 
    Start the HTTP server:
@@ -118,20 +83,8 @@ To allow cross-origin requests, you need to modify the server responses to inclu
 
    Create a server2.py file:
 
-   python
-   from flask import Flask, Response
-   from flask_cors import CORS
-
-   app = Flask(__name__)
-   CORS(app)
-
-   @app.route('/data')
-   def data():
-       return Response('Data from Server 2', content_type='text/plain')
-
-   if __name__ == '__main__':
-       app.run(port=8001)
-   
+  
+  
 
    Start the Flask server:
 
