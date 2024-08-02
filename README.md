@@ -13,17 +13,20 @@ Here’s a step-by-step guide to create a basic environment to test and understa
 
    bash
    sudo apt-get update
+   
    sudo apt-get install python3
    
 
-2. *Create a Simple Web Server*
+3. *Create a Simple Web Server*
 
    We’ll create two basic HTML files to simulate cross-origin requests.
 
    *Create the first web server (e.g., server1):*
 
    bash
+   
    mkdir server1
+   
    cd server1
    
 
@@ -35,6 +38,7 @@ Here’s a step-by-step guide to create a basic environment to test and understa
    Start the HTTP server:
 
    bash
+   
    python3 -m http.server 8000
    
 
@@ -43,7 +47,9 @@ Here’s a step-by-step guide to create a basic environment to test and understa
    Open a new terminal, and create another directory:
 
    bash
+   
    mkdir server2
+   
    cd server2
    
 
@@ -55,10 +61,11 @@ Here’s a step-by-step guide to create a basic environment to test and understa
    Start the HTTP server:
 
    bash
+   
    python3 -m http.server 8001
    
 
-3. *Testing Cross-Origin Requests*
+5. *Testing Cross-Origin Requests*
 
    Open a web browser and navigate to http://localhost:8000. Click the button to fetch data from Server 2. 
 
